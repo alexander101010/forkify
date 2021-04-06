@@ -4,10 +4,13 @@ export default class View {
   _data;
 
   /**
-   *
-   * @param {*} data
-   * @param {*} render
-   * @returns
+   * Render the received object to the DOM
+   * @param {Object | Object[]} data the data to be rendered (a recipe, for example)
+   * @param {boolean} [render=true] if false, create markup string instead of rendering to the DOM
+   * @returns {undefined | string} markup string is returned if render is set to false
+   * @this {Object} View instance
+   * @author Alex Botwinick
+   * @todo further features? deployment via netlify
    */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
